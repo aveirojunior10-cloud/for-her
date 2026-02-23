@@ -3,33 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romantic Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>For Her - Romantic Features</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #confetti { position: fixed; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+        button { margin: 5px; padding: 10px 20px; font-size: 16px; }
+        #quote { margin-top: 20px; font-style: italic; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Romantic Escape</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Our Story</h2>
-            <p>Once upon a time, in a land filled with love and dreams...</p>
-        </section>
-        <section>
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>Breathtaking Sceneries</li>
-                <li>Intimate Settings</li>
-                <li>Unforgettable Experiences</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>For reservations and inquiries, reach out to us at info@romanticescape.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Our Romantic Escape</p>
-    </footer>
+    <h1>Welcome to Our Romantic Space</h1>
+    <h2>Love Calculator</h2>
+    <input type="text" id="name1" placeholder="Your Name" />
+    <input type="text" id="name2" placeholder="Her Name" />
+    <button onclick="calculateLove()">Calculate Love</button>
+    <p id="result"></p>
+    
+    <h2>Yes or No?</h2>
+    <button onclick="showYes()">Yes</button>
+    <button onclick="showNo()">No</button>
+    <p id="response"></p>
+    
+    <div id="confetti"></div>
+    <button onclick="startConfetti()">Celebrate</button>
+    
+    <h2>Romantic Quotes</h2>
+    <button onclick="showQuote()">Show a Quote</button>
+    <p id="quote"></p>
+    
+    <script>
+        const quotes = [
+            "Love is composed of a single soul inhabiting two bodies.",
+            "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+            "The best thing to hold onto in life is each other."
+        ];
+        
+        function calculateLove() {
+            const name1 = document.getElementById('name1').value;
+            const name2 = document.getElementById('name2').value;
+            const loveScore = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('result').innerText = `Love Score: ${loveScore}%`;    
+            if(loveScore > 80) startConfetti();
+        }
+        
+        function showYes() {
+            document.getElementById('response').innerText = 'You chose Yes to love!';
+        }
+        
+        function showNo() {
+            document.getElementById('response').innerText = 'You chose No to love!';
+        }
+        
+        function showQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+        
+        function startConfetti() {
+            const confettiCanvas = document.getElementById('confetti');
+            // Add confetti animation here
+            alert('Confetti will start!'); // Placeholder for confetti effect
+        }
+    </script>
 </body>
 </html>
