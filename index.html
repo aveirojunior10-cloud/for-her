@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Kamu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="fade-in">Hai kamu 🌷</h1>
+    <p id="typing"></p>
+
+    <button onclick="showConfession()">Lanjut...</button>
+
+    <div id="confession" class="hidden">
+      <h2>Jadi...</h2>
+      <p>
+        Aku nggak tau kapan tepatnya aku mulai nyaman sama kamu.
+        Tapi setiap ngobrol sama kamu rasanya beda.
+      </p>
+      <h3>Maukah kamu jadi pacarku?</h3>
+
+      <div class="btn-group">
+        <button class="yes" onclick="accepted()">Iya 💖</button>
+        <button class="maybe" onclick="thinking()">Aku pikir dulu 🙈</button>
+      </div>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
